@@ -43,6 +43,14 @@ class User extends Authenticatable
     ];
 
     function secrets(){
-        return $this->hasMany('App\Secret');
+        return $this->hasMany('App\Models\Secret');
+    }
+
+    function comments(){
+        return $this->hasMany(Comment::class);
+    }
+
+    function posts(){
+        return $this->hasMany(Post::class);
     }
 }
