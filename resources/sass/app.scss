@@ -6,3 +6,59 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.bg-gradient-green{
+    background-color: #20bf55;
+    background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+}
+.glass_main {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #20bf55;
+    background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+;
+    //background: url(https://images.unsplash.com/photo-1506452305024-9d3f02d1c9b5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.glass_login {
+    position: relative;
+    background: #686d6f7a;
+    padding: 250px 250px;
+    border-radius: 30px;
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: 0px 12px 31px #ffffff52, 0px 36px 31px #000000a1;
+    animation: login 0.88s ease;
+}
+@keyframes glass_login {
+    0% {
+        transform: translateY(-10%) scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.glass_login:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #20bf55;
+    background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+    //background: url(https://images.unsplash.com/photo-1506452305024-9d3f02d1c9b5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80);
+    width: 100%;
+    z-index: -1;
+    background-size: 182vh;
+    background-position: 28%, 83%;
+    filter: blur(24px);
+    background-repeat: no-repeat;
+    opacity: 0.8;
+}
