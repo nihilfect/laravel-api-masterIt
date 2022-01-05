@@ -21,7 +21,9 @@
                 </tbody>
             </table>
         </div>
-        <h2 v-else>Questo profilo non ha scritto nessuno articolo</h2>
+        <div class="mt-3" v-else>
+        <h5><strong>Questo profilo non ha scritto nessun articolo, creane uno nella home page!</strong></h5>
+        </div>
     </div>
 </template>
 

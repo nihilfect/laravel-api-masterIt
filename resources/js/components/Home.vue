@@ -26,7 +26,7 @@
                     <label>Racconta qualcosa qui:</label>
                     <textarea v-model="post.body" name="email" class="form-control"></textarea>
                 </div>
-                <div class="form-group">
+                <div class="form-group mt-3">
                     <button v-show="!edit" type="submit" class="btn btn-primary" @click="createPost">Invia l'articolo</button>
                     <button v-show="edit" type="submit" class="btn btn-primary" @click="updatePost">Modifica articolo</button>
                 </div>
@@ -66,7 +66,7 @@
                 <div class="card-body d-flex flex-column">
                     <div class="d-flex justify-content-between">
                         <h5 class="card-title w-75">{{post.title}}</h5>
-                        <div class="w-25 d-flex justify-content-evenly">
+                        <div v-if="current_user_id == post.user_id" class="w-25 d-flex justify-content-evenly">
                             <a @click="showPost(post)" class="fa fa-edit fa-lg" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"></a>
                             <a @click="deletePost(post.id)" class="fa fa-times fa-lg"  style="color: red; cursor: pointer"></a>
                         </div>
@@ -81,7 +81,7 @@
         </div>
         <div>
 
-            <div class="pagination pagination-lg float-right">
+            <div class="pagination pagination-lg float-right justify-content-center mt-3 mb-5">
                 <button class="page-link" @click="fetchPaginateData(pagination.prev_page_url)" :disabled="!pagination.prev_page_url">
                     &laquo;
                 </button>
@@ -109,6 +109,7 @@ function getFormData (object){
 export default {
     data(){
         return {
+            current_user_id: localStorage.getItem("userid"),
             edit:false,
             list:[],
             total:'',
@@ -173,7 +174,7 @@ export default {
             const postParameters = {
                 'title': self.post.title,
                 'body': self.post.body,
-                'user_id': localStorage.getItem('userid')
+                'user_id': this.current_user_id
             }
             console.log(postParameters);
             let postForm =  getFormData(postParameters);

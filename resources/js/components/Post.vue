@@ -1,5 +1,5 @@
 <template>
-    <div id="singleArticle" class="container">
+    <div id="singleArticle" class="container mt-3">
         <div class="row">
             <div class="col-12">
                 <h3>{{post.title}}</h3>
@@ -129,7 +129,7 @@ export default {
 
 <style scoped>
 .section-wrapper {
-    //border-left: 2px solid orange;
+    /* border-left: 2px solid orange; */
     width: 70%;
     margin: 0 auto;
     margin-top: 30px;
