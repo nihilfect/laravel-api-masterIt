@@ -11414,3 +11414,7 @@ textarea.form-control-lg {
   background-repeat: no-repeat;
   opacity: 0.8;
 }
+
+.w-80 {
+  width: 80%;
+}

@@ -11,7 +11,11 @@ class PostController extends Controller
 {
     public function index(): \Illuminate\Contracts\Pagination\Paginator
     {
-         return DB::table('posts')->paginate(15);
+         return DB::table('posts')
+                 ->join('users','posts.user_id','=','users.id')
+                 ->select('posts.*','users.name')
+                 ->paginate(16);
+         //return DB::table('posts')->paginate(16);
     }
 
     public function store(Request $request )

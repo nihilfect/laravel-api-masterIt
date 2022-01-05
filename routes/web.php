@@ -49,8 +49,9 @@ Route::group(['prefix'=>'api'], function(){
     Route::delete('comments/{id}', [CommentController::class, 'destroy']);
 
     Route::get('users', [UserController::class, 'index']);
-    Route::GET('users/{id}', [UserController::class, 'singleUser']);
-    Route::GET('users/name/{name}', [UserController::class, 'userExists']);
+    Route::get('users/{id}', [UserController::class, 'singleUser']);
+    Route::get('users/name/{name}', [UserController::class, 'userExists']);
+    Route::get('userswithpost/{id}', [UserController::class, 'userwitharticle']);
 
 
 });

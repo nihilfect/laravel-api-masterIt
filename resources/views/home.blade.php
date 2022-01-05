@@ -16,8 +16,5 @@
       <navbar></navbar>
       <home></home>
   @endsection
-
-
-
     </body>
 </html>

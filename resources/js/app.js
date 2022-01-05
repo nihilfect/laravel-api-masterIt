@@ -23,6 +23,7 @@ Vue.component('post', require('./components/Post.vue').default);
 Vue.component('footervue', require('./components/Footervue.vue').default);
 Vue.component('home', require('./components/Home.vue').default);
 Vue.component('auth', require('./components/Auth.vue').default);
+Vue.component('profile', require('./components/Profile.vue').default);
 
 
 
